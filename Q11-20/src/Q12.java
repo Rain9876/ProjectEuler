@@ -82,6 +82,32 @@ public class Q12 {
         return numberOfFactors;
     }
 
+    // online PrimeFactorisation formula
+    private int PrimeFactorisation (long number){
+
+        int numberOfFactors = 1;
+        long temp = number;
+
+        if (number == 1) return 1;
+
+        for (int i = 2; i <= Math.sqrt(temp);i++){
+            int count = 1;
+            while(temp % i == 0){
+                temp/=i;
+                count++;
+            }
+            numberOfFactors*=count;
+        }
+
+        // if number is prime or the left divisor is prime.
+        // double the numberOfFactors
+        if (temp == number || temp > 1)
+            numberOfFactors *= 2;
+
+        return numberOfFactors;
+    }
+
+
 
 public static void main (String[] args){
     System.out.println(new Q12().solver(500));

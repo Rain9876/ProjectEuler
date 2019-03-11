@@ -50,6 +50,8 @@ public class Q11 {
                 line = br.readLine();
             }
 
+            br.close();
+
         }catch (IOException e){
             e.printStackTrace();
         }
