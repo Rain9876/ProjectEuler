@@ -30,7 +30,7 @@ public class Q11 {
 
         try {
 
-            br = new BufferedReader(new FileReader(path));
+        br = new BufferedReader(new FileReader(path));
 
             String line = br.readLine();
 
@@ -60,7 +60,7 @@ public class Q11 {
 
     }
 
-    public long solver(int number) throws IOException{
+    public long solver(int number){
 
         ArrayList<int[]> input = readFile("./appendix/Q11.txt");
 
@@ -113,7 +113,7 @@ public class Q11 {
         return product;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
        System.out.println(new Q11().solver(4));
     }
