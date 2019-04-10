@@ -16,6 +16,10 @@ fun main(args: Array<String>) {
 }
 
 class MaxPrimeFactor {
+    init {
+        println("The prime factors of 13195 are 5, 7, 13 and 29.\n" +
+                "What is the largest prime factor of the number 600851475143 ?")
+    }
 
     fun solver(number: Long): Int {
         var numbertemp = number

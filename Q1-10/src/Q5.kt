@@ -60,7 +60,7 @@ class SmallestMultiple{
 
     fun isPrime(number: Int):Boolean {
         var i = 2
-        while (i <= number / 2) {
+        while (i <= Math.sqrt(number.toDouble())) {
             if (number % i == 0) return false
             i++
         }

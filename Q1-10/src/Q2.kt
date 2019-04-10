@@ -11,16 +11,14 @@
 */
 
 fun main(args: Array<String>) {
-    val results = EvenFibo().solver()
+    val results = EvenFibo().solver(4000000)
     println(results)
 }
 
 class EvenFibo {
-
-    val limit = 4000000
     var ef0 = 2
     var ef1 = 8
-    var sum = 2
+    var sum = 0
 
 
     init {
@@ -30,7 +28,8 @@ class EvenFibo {
 
 
     // Even Fib: Ef2 = 4 * Ef1 + Ef0
-    fun solver(): Int {
+    fun solver(limit:Int): Int {
+        sum += ef0
 
         while (ef1 < limit) {
 
