@@ -17,8 +17,8 @@ using namespace std;
 class Q27 {
 
 public:
-    Q27(){
-        cout << "Find the product of the coefficients, a and b, for the quadratic expression" <<endl;
+    Q27() {
+        cout << "Find the product of the coefficients, a and b, for the quadratic expression" << endl;
     }
 
 
@@ -26,19 +26,21 @@ public:
     // n = 0, b is a prime
     // n = 1, 1 + a + b, then b is odd, 1 is odd, then a should be odd.
 
-    void solver(){
-        int nMax = 0; int aMax = 0; int bMax = 0;
+    void solver() {
+        int nMax = 0;
+        int aMax = 0;
+        int bMax = 0;
 
-        for (int a = -999; a < 1000; a+=2){
-            for (int b = -1000; b <= 1000; b++){
+        for (int a = -999; a < 1000; a += 2) {
+            for (int b = -1000; b <= 1000; b++) {
 
-                if (!isPrime(b)){
+                if (!isPrime(b)) {
                     continue;
                 }
 
                 int n = 0;
-                while(isPrime(abs(n*n + a*n + b))){
-                    n ++;
+                while (isPrime(abs(n * n + a * n + b))) {
+                    n++;
                 }
 
                 if (n > nMax) {
@@ -54,9 +56,9 @@ public:
 
     }
 
-    bool isPrime(int m){
-        for (int i = 2; i <= sqrt(m); i++){
-            if (m % i == 0){
+    bool isPrime(int m) {
+        for (int i = 2; i <= sqrt(m); i++) {
+            if (m % i == 0) {
                 return false;
             }
         }

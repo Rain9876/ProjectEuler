@@ -4,7 +4,7 @@
 
 #include "Q30.h"
 
-int main(){
+int main() {
     Q30 digitFifthPowers;
     digitFifthPowers.solver();
     return 0;

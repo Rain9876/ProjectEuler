@@ -4,7 +4,7 @@
 
 #include "Q29.h"
 
-int main(){
+int main() {
     Q29 distinctPowers;
     distinctPowers.solver();
     return 0;

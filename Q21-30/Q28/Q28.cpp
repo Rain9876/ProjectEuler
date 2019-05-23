@@ -5,7 +5,7 @@
 
 #include "Q28.h"
 
-int main(){
+int main() {
     Q28 NumberSpiralDiagonals;
     NumberSpiralDiagonals.solver(1001);
 

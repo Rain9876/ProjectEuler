@@ -44,7 +44,7 @@ public:
             }
         }
 
-        cout << collection.size()<< endl;
+        cout << collection.size() << endl;
     }
 
 };

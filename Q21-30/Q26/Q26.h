@@ -19,8 +19,9 @@ class Q26 {
 
 public:
 
-    Q26(){
-        cout << "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.\n";
+    Q26() {
+        cout
+                << "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.\n";
     }
 
     // decimal number
@@ -29,35 +30,38 @@ public:
     // 3. Repeat after a non-repeat part fraction => 10^k(10^m -1) mod n = 0, which is combined case 1 and 2
     // For base d = 10 and q = denominator
 
-    void solver(){
-        long max = 1; int k = 1; int cycleIndex = 3;
-        for(int d = 3;d <= 1000; d++){
-           if (lengthOfFraction(d) > max){
-               max = lengthOfFraction(d);
-               cycleIndex = d;
-           }
+    void solver() {
+        long max = 1;
+        int k = 1;
+        int cycleIndex = 3;
+        for (int d = 3; d <= 1000; d++) {
+            if (lengthOfFraction(d) > max) {
+                max = lengthOfFraction(d);
+                cycleIndex = d;
+            }
 
 
         };
 
-        cout<< cycleIndex << endl;
+        cout << cycleIndex << endl;
 
     }
 
 
-    long lengthOfFraction(int d){
-        int i = 1; long k = 0;
+    long lengthOfFraction(int d) {
+        int i = 1;
+        long k = 0;
 
         d = makeCoPrimeToTen(d);        // Terminating fraction
 
-        if (d == 1){
+        if (d == 1) {
             return 0;
         }
 
         do {
             i = i * 10 % d;
             k++;
-        } while(i != 1);
+        } while (i != 1);
 
         return k;
 
@@ -65,14 +69,14 @@ public:
 
 
 private:
-        int makeCoPrimeToTen(int n){
+    int makeCoPrimeToTen(int n) {
 
-        while(n%2==0){
-            n = n/2;
+        while (n % 2 == 0) {
+            n = n / 2;
         }
 
-        while(n%5 ==0){
-            n = n/5;
+        while (n % 5 == 0) {
+            n = n / 5;
         }
 
         return n;

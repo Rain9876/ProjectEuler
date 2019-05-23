@@ -18,34 +18,37 @@
 
 #include <cmath>
 #include <iostream>
+
 using namespace std;
 
 
 class Q30 {
 
 public:
-    int powOfFifth[10]= {};
+    int powOfFifth[10] = {};
 
-    Q30(){
-        cout << "Find the sum of all the numbers that can be written as the sum of fifth powers of their digits." << endl;
+    Q30() {
+        cout << "Find the sum of all the numbers that can be written as the sum of fifth powers of their digits."
+             << endl;
     }
 
     // 9(10^m + 10^m-1 + ... 10^0) > (9^5) * m
     // when m = 6, the equation does work
     // 9^5 * 6 = 354294
 
-    void solver(){
+    void solver() {
         POW();
 
         int sum = 0;
-        for (int i = 2; i < 354294; ++i){
-            int temp = 0; int number = i;
+        for (int i = 2; i < 354294; ++i) {
+            int temp = 0;
+            int number = i;
 
-            while(number > 0){
+            while (number > 0) {
 
                 int d = number % 10;
 
-                number = number/10 | 0;
+                number = number / 10 | 0;
 
                 temp += powOfFifth[d];
             }
@@ -58,9 +61,9 @@ public:
         cout << sum << endl;
     }
 
-    void POW(){
-        for (int i = 0; i < 10; ++i){
-            powOfFifth[i] = (int)pow(i,5);
+    void POW() {
+        for (int i = 0; i < 10; ++i) {
+            powOfFifth[i] = (int) pow(i, 5);
         }
     }
 };

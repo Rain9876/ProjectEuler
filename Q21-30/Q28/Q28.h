@@ -20,22 +20,25 @@
 #define Q21_30_Q28_H
 
 #include <iostream>
+
 using namespace std;
 
 class Q28 {
 
 public:
 
-    Q28(){
-        cout << "What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?" << endl;
+    Q28() {
+        cout << "What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?"
+             << endl;
     }
 
 
-    void solver(int m){
-        long sum = 1; long last = 1;
-        for (int i = 3; i <= m; i += 2){
-            sum += 4 * last + (4+3+2+1)*(i-1);
-            last = last + 4*(i-1);
+    void solver(int m) {
+        long sum = 1;
+        long last = 1;
+        for (int i = 3; i <= m; i += 2) {
+            sum += 4 * last + (4 + 3 + 2 + 1) * (i - 1);
+            last = last + 4 * (i - 1);
         }
 
         cout << sum << endl;
