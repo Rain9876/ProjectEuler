@@ -13,13 +13,14 @@
 #include <iostream>
 #include <chrono>
 #include <cmath>
+
 using namespace std;
 
 class Q25 {
 
 public:
 
-    Q25(){
+    Q25() {
         cout << "What is the index of the first term in the Fibonacci sequence to contain 1000 digits?\n";
     }
 
@@ -29,36 +30,32 @@ public:
     // L(fib(n)) = floor(1+log(((1+√5)^n/√5),10))
     // which is floor(1 + nlog(1+√5,10) - 0.5log(5,10)) > 1000
 
-    void solver(int n){
+    void solver(int n) {
         auto start = chrono::steady_clock::now();
 
         double value = 0;
-        double goldRatio = (1+ sqrt(5))/2;
+        double goldRatio = (1 + sqrt(5)) / 2;
         int i = 1;
 
-        while (value < 1000){
+        while (value < 1000) {
             i++;
             value = floor(1 + i * log10(goldRatio) - 0.5 * log10(5));
         }
 
-        cout << ceil(4.78497 * n - 3.1127)<< endl;
+        cout << ceil(4.78497 * n - 3.1127) << endl;
 
-
-//        for (int i = 0; i < 10 ;++i) {
-//            cout << binetFib(i)<< endl;
-//        }
 
         // for performance measurement
         auto end = chrono::steady_clock::now();
 
-        chrono::microseconds elapse = chrono::duration_cast< chrono::milliseconds > (end-start);
+        chrono::microseconds elapse = chrono::duration_cast<chrono::milliseconds>(end - start);
 
         double nanos = end.time_since_epoch().count() - start.time_since_epoch().count();
 
         double micros = elapse.count();
 
-        cout << micros/1e6 << endl;
-        cout << nanos/1e9 << endl;
+        cout << micros / 1e6 << endl;
+        cout << nanos / 1e9 << endl;
 
 
     }
@@ -79,16 +76,14 @@ public:
 
 
     // binet's Fibonacci formula
-    double binetFib(int n){
+    double binetFib(int n) {
 
-        double goldRatio = (1 + sqrt(5))/2;
+        double goldRatio = (1 + sqrt(5)) / 2;
 
-        double f = (pow(goldRatio,n) - pow (-goldRatio,-n)) / sqrt(5);
+        double f = (pow(goldRatio, n) - pow(-goldRatio, -n)) / sqrt(5);
 
         return f;
     }
-
-
 
 
 };

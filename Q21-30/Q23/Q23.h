@@ -22,20 +22,21 @@ class Q23 {
 public:
 
     Q23() {
-        cout << "Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.\n";
+        cout
+                << "Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.\n";
 
     }
 
     vector<int> abundants = abundantNumber();
 
 
-    long solver() const{
+    long solver() const {
 
         long sum = 0;
 
         for (int i = 0; i < 28124; ++i) {
 
-            if (!isSumOfTwoAbundants(i)){
+            if (!isSumOfTwoAbundants(i)) {
                 sum += i;
             }
         }
@@ -45,14 +46,13 @@ public:
     };
 
 
-
-    bool isSumOfTwoAbundants(int n) const{
+    bool isSumOfTwoAbundants(int n) const {
 
         if (n >= 28123) return true;
 
-        for (auto i: abundants){
+        for (auto i: abundants) {
 
-            if(i >= n){
+            if (i >= n) {
                 return false;
             }
 
@@ -68,8 +68,7 @@ public:
     }
 
 
-
-    vector<int> abundantNumber() const{
+    vector<int> abundantNumber() const {
 
         vector<int> abundantNumber;
 

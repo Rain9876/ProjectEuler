@@ -13,42 +13,43 @@
 
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
 class Q21 {
 
 public:
 
-    Q21(){
+    Q21() {
         cout << "Evaluate the sum of all the amicable numbers under 10000.\n";
     };
 
-    int solver(int bound) const{
+    int solver(int bound) const {
 
         int sumAmicable = 0;
-        for (int i = 1; i <= bound; i++){
+        for (int i = 1; i <= bound; i++) {
             int j = sumProperDivisors(i);
-            if(j <= bound && j != i && sumProperDivisors(j) == i){
+            if (j <= bound && j != i && sumProperDivisors(j) == i) {
                 sumAmicable += i;
                 sumAmicable += j;
-                cout<< i <<" & "<<j <<"\n";
+                cout << i << " & " << j << "\n";
             }
         }
 
-        return sumAmicable/2;       // duplicated pairs
+        return sumAmicable / 2;       // duplicated pairs
 
 
     };
 
-    int sumProperDivisors(int number) const{
+    int sumProperDivisors(int number) const {
 
         int sum = 0;
 
-        for (int i = 1; i <= sqrt(number);i++){
+        for (int i = 1; i <= sqrt(number); i++) {
 
-            if (number%i == 0){
+            if (number % i == 0) {
                 sum += i;
-                if(i != number/i) {
+                if (i != number / i) {
                     sum += number / i;
                 }
 
@@ -62,7 +63,6 @@ public:
     };
 
 };
-
 
 
 #endif //Q21_30_Q21_H

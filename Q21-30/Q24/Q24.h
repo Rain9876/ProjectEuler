@@ -12,10 +12,12 @@
 
 #ifndef Q21_30_Q24_H
 #define Q21_30_Q24_H
+
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Q24 {
@@ -24,7 +26,7 @@ public:
 
     int factorials[11];                     // Value escapes local scope !!!
 
-    Q24(){
+    Q24() {
         cout << "What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?\n";
     }
 
@@ -35,13 +37,13 @@ public:
     //  9 --> 362880
     // 10 --> 3628800
 
-    string solver(int number){
+    string solver(int number) {
 
-        int * factorialValue;
+        int *factorialValue;
 
         factorialValue = factorial(10);
 
-        vector<int> permutation = {0,1,2,3,4,5,6,7,8,9};
+        vector<int> permutation = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         string list = "";
 
@@ -50,13 +52,12 @@ public:
         int remain = 1000000;
 
         remain--;
-        for (int i = 1; i <= 10; ++i){
-            int value = *(factorialValue+ n-i);
-            auto j = (int)floor(remain/ value);
+        for (int i = 1; i <= 10; ++i) {
+            int value = *(factorialValue + n - i);
+            auto j = (int) floor(remain / value);
             list += to_string(permutation[j]);
-//            cout<< list <<endl;
-            remain -= value*j;
-            permutation.erase(permutation.begin()+j);
+            remain -= value * j;
+            permutation.erase(permutation.begin() + j);
         }
 
 
@@ -65,7 +66,7 @@ public:
     }
 
 
-    int* factorial(int n) {
+    int *factorial(int n) {
 
         factorials[0] = 1;
 
