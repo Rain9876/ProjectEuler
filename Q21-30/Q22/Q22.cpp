@@ -1,6 +1,6 @@
 //
 // Created by Yurun SONG on 21/04/2019.
-// Q22: Names scores
+//
 
 #include "Q22.h"
 

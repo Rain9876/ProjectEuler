@@ -13,46 +13,47 @@
 #include <sstream>
 #include <map>
 #include <string>
-
 using namespace std;
 
 class Q22 {
 
 public:
 
-    Q22() {
+    Q22(){
         cout << "What is the total of all the name scores in the file?" << endl;
     };
 
 
-    map<string, int> readNames(const string &path) const {
+
+    map<string,int> readNames(const string &path) const{
 
         ifstream nameFile(path);
 
 
-        if (!nameFile) {
-            cout << "file not exist";
+        if(!nameFile){
+            cout<< "file not exist";
         }
 
         char c;
         int sum = 0;
         string name;
-        map<string, int> names;
+        map<string,int> names;
 
-        while (nameFile) {
+        while (nameFile){
 
             nameFile.get(c);
 
-            if (c != '"' && c != ',') {
-                sum += (int) c - 64;
+            if (c != '"'&& c != ','){
+                sum += (int)c - 64;
                 name += c;
 
-            } else if (c == ',' || nameFile.eof()) {       // the final name does not have ',' character
-                names.insert(make_pair(name, sum));
+            }else if(c == ',' || nameFile.eof()){       // the final name does not have ',' character
+                names.insert(make_pair(name,sum));
                 sum = 0;
                 name = "";
 
             }
+
 
 
         }
@@ -63,26 +64,26 @@ public:
 
     };
 
-    void solver() const {
+    void solver() const{
 
         string path = "../appendix/names.txt";
 
-        map<string, int> nameMap = readNames(path);
+        map<string,int> nameMap = readNames(path);
 
         auto it = nameMap.begin();
 
         long nameScore = 0;
-        for (int i = 0; i < nameMap.size(); i++) {
+        for (int i = 0; i < nameMap.size(); i++){
 
-            if (it->first == "COLIN") {
-                cout << i + 1 << " -> " << it->second << endl;
+            if (it->first == "COLIN"){
+                cout << i+1 << " -> "<<it->second << endl;
             }
 
-            nameScore += (i + 1) * it->second;
+            nameScore += (i+1) * it->second;
             ++it;
         }
 
-        cout << nameScore << endl;
+        cout<< nameScore<<endl;
 
 
     }

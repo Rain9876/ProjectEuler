@@ -1,12 +1,15 @@
 //
-// Created by Yurun SONG on 16/04/2019.
-// Q21: Amicable numbers
+// Created by Charlie on 16/04/2019.
+//
 
 
 #include "Q21.h"
 
-int main() {
-    Q21 amicableNumbers;
-    cout << amicableNumbers.solver(10000) << endl;
+int main(){
+
+    Q21 question21;
+
+    cout << question21.solver(10000);
+
     return 0;
 };
