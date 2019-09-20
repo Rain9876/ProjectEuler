@@ -35,14 +35,12 @@ public class Q47 {
         int i = 100;
         while (true) {
             if (hasFourPrimeFactors(i)) {
-                // Todo: Count increases. If count is four,then return i-4.
                 count++;
                 if (count == 4) {
                     System.out.println(i - 3);
                     return;
                 }
             } else {
-                // Todo: Reset the count, equals to 0
                 count = 0;
             }
             i++;
@@ -50,7 +48,7 @@ public class Q47 {
     }
 
 
-    public void generatePrimes() {
+    private void generatePrimes() {
         for (int i = 2; i < 10000; i++) {
             if (isPrime(i)) {
                 PRIMES.add(i);
@@ -59,7 +57,7 @@ public class Q47 {
 
     }
 
-    public boolean isPrime(int n) {
+    private boolean isPrime(int n) {
         if (n == 0 || n == 1) return false;
         if (n == 2 || n == 3) return true;
         for (int i = 2; i < Math.sqrt(n) + 1; i++) {
@@ -71,20 +69,17 @@ public class Q47 {
     }
 
     // First three is in the PRIMES and the last one if it is a PRIME or not
-    public boolean hasFourPrimeFactors(int n) {
-        Set<Integer> distinctFactors = new TreeSet<Integer>() {
-        };
+    private boolean hasFourPrimeFactors(int n) {
+        Set<Integer> distinctFactors = new TreeSet<Integer>();
 
         if (isPrime(n)) return false;
 
-        // Todo: Iterate all the Primes by 2 and 3
         int i = 0;
         while (i <= PRIMES.size() - 1) {
 
             int prime = PRIMES.get(i);
 
             if (n % prime == 0) {
-                // Todo: If n mod i, then n is divisible by i
                 n /= prime;
                 distinctFactors.add(prime);
                 if (distinctFactors.size() == 3) return isPrime(n);
@@ -92,7 +87,7 @@ public class Q47 {
             } else {
                 i++;
             }
-            
+
             if (n == 1) return (distinctFactors.size() == 4);
         }
         return false;
@@ -100,7 +95,6 @@ public class Q47 {
 
     public static void main(String[] args) {
         Q47 result = new Q47();
-//        System.out.println(result.hasFourPrimeFactors(134046));
         result.solver();
     }
 
