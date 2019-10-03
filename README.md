@@ -13,3 +13,5 @@ Kotlin is implemented in Q31 - 40
 Java is implemented in Q41 - 50
 
 C++ is implemented in Q51 - 60
+
+Python is implemented in Q61 - 70
